@@ -1,0 +1,66 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    name: springboot
+    type: com.alibaba.druid.pool.DruidDataSource
+    #druid setting
+    druid:
+      #filters for monitoring statistics interception
+      filter: stat
+      #mysql driver
+      driver-class-name: com.mysql.jdbc.Driver
+      #basic properties
+      url: jdbc:mysql://127.0.0.1:3306/limitedoffer?serverTimezone=GMT&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      username: root
+      password: qwert1996
+      #configure initial min max
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      #Get connection waiting timeout
+      max-wait: 60000
+      #How often will the test be performed to detect idle connections that need to be closed
+      time-between-eviction-runs-millis: 60000
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: LEGACYHTML5
+    cache: false
+
+  #File upload related settings
+  servlet:
+    multipart:
+      max-file-size: 10Mb
+      max-request-size: 100Mb
+
+  #devtools
+  devtools:
+    livereload:
+      enabled: true #Does it support livereload
+      port: 35729
+    restart:
+      enabled: true #Does it support Hot-deployable services
+
+  #spring-aop configuration
+  aop:
+    #open @Aspectj Annotation-driven aspect，allow Spring to Create class-based agents
+    auto: true
+    proxy-target-class: true
+
+
+#mybatis configure
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.limitedtimeoffers.sprintboot.entity
+
+#mybaatis page-helper setting
+pagehelper:
+  pagehelperDialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  #params: count=countSql
