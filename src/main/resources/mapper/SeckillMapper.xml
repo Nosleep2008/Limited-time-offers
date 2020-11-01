@@ -14,7 +14,7 @@
     <update id = "reduceStock">
         update seckill
         set stock_count = stock_count  -1
-        where sec_kill_id = #{seckillId}
+        where seckill_id = #{seckillId}
         and start_time &lt;= #{killTime}
         and end_time &gt;= #{killTime}
         and stock_count &gt; 0

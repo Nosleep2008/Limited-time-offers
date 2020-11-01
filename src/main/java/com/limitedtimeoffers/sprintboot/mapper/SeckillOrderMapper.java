@@ -1,10 +1,12 @@
 package com.limitedtimeoffers.sprintboot.mapper;
 
 import com.limitedtimeoffers.sprintboot.entity.SeckillOrder;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
 
+@Mapper
 public interface SeckillOrderMapper {
 
     /**
