@@ -79,7 +79,7 @@ spring:
 #mybatis configuration
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: cn.tycoding.entity
+  type-aliases-package: com.limitedtimeoffers.springboot.entity
   configuration:
     # jdbc getGeneratedKeys
     use-generated-keys: true

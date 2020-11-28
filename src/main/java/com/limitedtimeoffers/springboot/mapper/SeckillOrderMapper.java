@@ -3,7 +3,7 @@ package com.limitedtimeoffers.springboot.mapper;
 import com.limitedtimeoffers.springboot.entity.SeckillOrder;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
+import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 
 @Mapper

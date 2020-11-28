@@ -1,12 +1,12 @@
 .container {
     width: 100%;
     margin: 15px 0;
-    font-family: "微软雅黑";
+    font-family: "micro";
     margin-left: 5%;
 }
 
 .itemInfo-wrap {
-    font-family: "宋体";
+    font-family:"sans-serif";
     width: 40%;
     margin-right: 24%;
 }
@@ -32,7 +32,7 @@ h4 {
     line-height: 30px;
     font-weight: 700;
     color: #fff;
-    background: url(../../lib/font/icon/seckillbg.png) repeat-x;
+    background: url(../lib/font/icon/seckillbg.png) repeat-x;
 }
 
 .news span img {

@@ -12,42 +12,58 @@ public class Seckill implements Serializable {
     private String title;
     private String image;
     private BigDecimal price;
-    private BigDecimal costPrices;
+    private BigDecimal costPrice;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+0")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+0")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date startTime;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+0")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date endTime;
 
     private long stockCount;
-    private BigDecimal costPrice;
 
-    public void setSeckillId(long seckillId){
+    public long getSeckillId() {
+        return seckillId;
+    }
+
+    public void setSeckillId(long seckillId) {
         this.seckillId = seckillId;
     }
-    public long getSeckillId(){
-        return this.seckillId;
+
+    public String getTitle() {
+        return title;
     }
-    public void setTitle(String title){
+
+    public void setTitle(String title) {
         this.title = title;
     }
-    public String getTitle(){
-        return this.image;
-    }
-    public void setImage(String image){
-        this.image = image;
-    }
-    public String getImage(){
+
+    public String getImage() {
         return image;
     }
-    public BigDecimal getPrice(){
-        return this.price;
+
+    public void setImage(String image) {
+        this.image = image;
     }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public BigDecimal getCostPrice() {
+        return costPrice;
+    }
+
     public void setCostPrice(BigDecimal costPrice) {
         this.costPrice = costPrice;
     }
