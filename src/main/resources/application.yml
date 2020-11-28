@@ -24,6 +24,30 @@ spring:
       #How often will the test be performed to detect idle connections that need to be closed
       time-between-eviction-runs-millis: 60000
 
+  #redis cache
+  redis:
+    #redis database index，0
+    database: 0
+    #redis server address
+    host: 127.0.0.1
+    # Redis connect password
+    password:
+    #redis server port
+    port: 6379
+
+    timeout: 1000
+    jedis:
+      pool:
+        # max connection number (negative represents infinite)
+        max-active: 8
+        # max blocking time (negative represents infinite)
+        max-wait: -1
+        # max idle connection
+        max-idle: 8
+        # min idle connection
+        min-idle: 0
+
+
   thymeleaf:
     prefix: classpath:/templates/
     check-template-location: true
@@ -52,11 +76,16 @@ spring:
     auto: true
     proxy-target-class: true
 
-
-#mybatis configure
+#mybatis configuration
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.limitedtimeoffers.sprintboot.entity
+  type-aliases-package: cn.tycoding.entity
+  configuration:
+    # jdbc getGeneratedKeys
+    use-generated-keys: true
+    use-column-label: true
+    map-underscore-to-camel-case: true
+
 
 #mybaatis page-helper setting
 pagehelper:
@@ -64,3 +93,8 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   #params: count=countSql
+
+  # print sql
+  logging:
+    level:
+      com.limitedtimeoffers.sprintboot.mapper: DEBUG

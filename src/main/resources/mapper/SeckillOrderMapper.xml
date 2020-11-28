@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.limitedtimeoffers.sprintboot.mapper.SeckillOrderMapper">
+<mapper namespace="com.limitedtimeoffers.springboot.mapper.SeckillOrderMapper">
     <insert id="insertOrder">
         insert ignore INTO seckill_order(seckill_id, money, user_phone)
         value (#{seckillId},#{money},#{userPhone})
